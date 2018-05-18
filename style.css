@@ -1,0 +1,237 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background-color: lightblue;
+}
+
+.wrapper {
+  display: grid;
+  font-family: helvetica, sans-serif;
+  font-size: 1.2em;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+  grid-gap: 0;
+  height: auto;
+  grid-template-areas:
+    'infobox   infobox'
+    'carousel  carousel'
+    'carousel  carousel'
+    'carousel  carousel'
+    'four      five'
+    'six       seven'
+    'eight     nine';
+}
+
+.wrapper div {
+  position: relative;
+}
+
+div .content {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  overflow: hidden;
+  color: white;
+  border: 0;
+  width: 100%;
+  height: 100%;
+}
+
+aside i {
+  font-size: 4em;
+}
+
+.icon {
+  width: 100%;
+  padding-bottom: 90%;
+}
+
+h2 {
+  margin: 1em 0;
+  padding: 0;
+}
+
+h3 {
+  margin: 0;
+  padding: 0;
+  font-weight: lighter;
+  font-size: 0.8em;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+  font-size: 0.8em;
+  font-weight: lighter;
+  line-height: 1.4;
+}
+
+.infobox {
+  grid-area: infobox;
+  background-color: #2E4032;
+}
+
+.info {
+  display: block;
+  position: absolute;
+  border: 0;
+  margin: 10% 2em;
+  line-height: 30px;
+  color: white;
+  width: 100%;
+  height: 100%;
+}
+.info button {
+  background-color: transparent;
+  padding: 1% 2%;
+  margin: 2% 2% 0 0;
+  border: 2px solid white;
+  color: white;
+}
+
+.info button a {
+  color: white;
+  text-decoration: none;
+}
+
+.fa fa-cloud {
+  font-size: 0.5em;
+}
+
+.carousel {
+  grid-area: carousel;
+  position: relative;
+  height: 100%;
+  background-color: grey;
+}
+.carousel .carousel-btns {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
+}
+.carousel button {
+  border-radius: 100px;
+  background-color: black;
+  outline: 0;
+  color: white;
+  width: 50px;
+  height: 50px;
+  border: 3px solid white;
+  opacity: 0.5;
+  margin: 0 10px;
+}
+
+.carousel button:hover {
+  background-color: lightblue;
+}
+
+.carousel button a {
+  color: white;
+  text-decoration: none;
+}
+
+.carousel-btns img {
+  position: absolute;
+  width: 100%;
+  object-fit: contain;
+}
+
+.carousel aside {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 20px 40px;
+  z-index: 100;
+}
+
+nav div {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 100px;
+  background-color: transparent;
+  border: 2px solid #fff;
+}
+
+nav div a {
+  text-decoration: none;
+}
+
+.selected {
+  background-color: #4C5164;
+}
+
+.three {
+  grid-area: three;
+  background-color: #9F435C;
+}
+
+.four {
+  grid-area: four;
+  background-color: #1D2236;
+}
+
+.five {
+  grid-area: five;
+  background-color: #74192A;
+}
+
+.six {
+  grid-area: six;
+  background-color: #2E4032;
+}
+.seven {
+  grid-area: seven;
+  background-color: #9F435C;
+}
+.eight {
+  grid-area: eight;
+  background-color: #1D2236;
+}
+.nine {
+  grid-area: nine;
+  background-color: #9F435C;
+}
+
+@media only screen and (min-width: 860px) {
+  .wrapper {
+    display: grid;
+    font-family: helvetica, sans-serif;
+    font-size: 1.2em;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto;
+    grid-gap: 0;
+    height: auto;
+    grid-template-areas:
+      'infobox infobox three carousel carousel'
+      'four    five    six   carousel carousel'
+      'seven   eight   nine  carousel carousel';
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .wrapper {
+    display: grid;
+    border: 1px solid blue;
+    font-family: helvetica, sans-serif;
+    font-size: 1.2em;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto;
+    grid-gap: 0;
+    height: auto;
+    grid-template-areas:
+      'infobox infobox three carousel carousel'
+      'four    five    six   carousel carousel'
+      'seven   eight   nine  carousel carousel';
+  }
+}
