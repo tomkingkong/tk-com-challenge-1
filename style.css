@@ -4,8 +4,23 @@
   box-sizing: border-box;
 }
 body {
-  margin: 0;
-  background-color: lightblue;
+  background-color: #fff;
+  font-family: 'Open Sans', sans-serif;
+}
+
+svg {
+  fill: white;
+  cursor: pointer;
+}
+aside {
+  display: flex;
+  align-items: center;
+}
+
+aside svg {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
 }
 
 .wrapper {
@@ -13,17 +28,19 @@ body {
   font-family: helvetica, sans-serif;
   font-size: 1.2em;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(7, 1fr);
+  grid-template-rows: 1fr .3fr .3fr .3fr .3fr .3fr .3fr .3fr 1fr;
   grid-gap: 0;
-  height: auto;
+  height: 100%;
   grid-template-areas:
-    'infobox   infobox'
-    'carousel  carousel'
-    'carousel  carousel'
-    'carousel  carousel'
-    'four      five'
-    'six       seven'
-    'eight     nine';
+    'infobox infobox'
+    'three  three'
+    'four  four'
+    'five  five'
+    'six   six'
+    'seven  seven'
+    'eight  eight'
+    'nine   nine'
+    'carousel carousel';
 }
 
 .wrapper div {
@@ -33,61 +50,102 @@ body {
 div .content {
   display: flex;
   text-align: center;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
   position: absolute;
   overflow: hidden;
   color: white;
+  font-family: 'Press Start 2P', cursive;
+  font-size: .8em;
   border: 0;
+  margin-left: 1em;
   width: 100%;
   height: 100%;
+}
+
+div .content h3 {
+  margin-top: 1em;
+}
+
+div .content svg:hover {
+  fill: #88C1EE;
 }
 
 aside i {
   font-size: 4em;
 }
 
+aside a {
+  margin-left: .2em;
+  text-decoration: none;
+  color: white;
+}
+
+aside a:hover {
+  text-decoration: none;
+  color: lightblue;
+}
+
 .icon {
   width: 100%;
-  padding-bottom: 90%;
 }
 
 h2 {
+  font-size: 2rem;
   margin: 1em 0;
-  padding: 0;
+  font-weight: 700;
 }
 
 h3 {
-  margin: 0;
-  padding: 0;
   font-weight: lighter;
   font-size: 0.8em;
 }
 
-p {
-  margin: 0;
-  padding: 0;
-  font-size: 0.8em;
-  font-weight: lighter;
-  line-height: 1.4;
+.info-text i {
+  font-size: 1.5em;
 }
+
+.info-text {
+  font-size: 0.5em;
+  font-weight: lighter;
+  font-family: 'Press Start 2P', cursive;
+  line-height: 1.8;
+  margin-left: 1.6em;
+  width: 90%;
+}
+
 
 .infobox {
+  background-color: #88C1EE;
   grid-area: infobox;
-  background-color: #2E4032;
 }
 
 .info {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
   position: absolute;
   border: 0;
-  margin: 10% 2em;
-  line-height: 30px;
+  padding: .5em;
   color: white;
   width: 100%;
   height: 100%;
+  transition: all .25s ease-in-out;
 }
-.info button {
+
+.info img {
+  width: 15em;
+  margin-bottom: .8em;
+}
+
+.info nav {
+  display: flex;
+  margin-left: .8em;
+  width: 90%;
+}
+
+.info nav button {
+  max-height: 40px;
   background-color: transparent;
   padding: 1% 2%;
   margin: 2% 2% 0 0;
@@ -96,11 +154,16 @@ p {
 }
 
 .info button a {
+  display: flex;
+  font-size: .7em;
+  align-items: center;
   color: white;
+  max-width: 100px;
   text-decoration: none;
 }
 
-.fa fa-cloud {
+button i {
+  margin-right: .5em;
   font-size: 0.5em;
 }
 
@@ -108,8 +171,9 @@ p {
   grid-area: carousel;
   position: relative;
   height: 100%;
-  background-color: grey;
+  transition: all .25s ease-in-out;
 }
+
 .carousel .carousel-btns {
   display: flex;
   text-align: center;
@@ -119,6 +183,14 @@ p {
   height: 100%;
   justify-content: space-between;
 }
+
+.carousel .content {
+  margin-left: 0;
+  background: url(images/16.jpg) no-repeat;
+  background-size: cover;
+
+}
+
 .carousel button {
   border-radius: 100px;
   background-color: black;
@@ -129,6 +201,7 @@ p {
   border: 3px solid white;
   opacity: 0.5;
   margin: 0 10px;
+  cursor: pointer;
 }
 
 .carousel button:hover {
@@ -142,25 +215,26 @@ p {
 
 .carousel-btns img {
   position: absolute;
+  z-index: -1;
+  height: 100%;
   width: 100%;
-  object-fit: contain;
+  object-fit: cover;
 }
 
-.carousel aside {
+.carousel nav {
   position: absolute;
   top: 0;
   right: 0;
-  margin: 20px 40px;
+  margin: .6em;
   z-index: 100;
 }
 
 nav div {
   display: inline-block;
-  width: 15px;
-  height: 15px;
+  width: .5em;
+  height: .5em;
   border-radius: 100px;
-  background-color: transparent;
-  border: 2px solid #fff;
+  background-color: #777;
 }
 
 nav div a {
@@ -168,70 +242,144 @@ nav div a {
 }
 
 .selected {
-  background-color: #4C5164;
+  background-color: #fff;
 }
 
 .three {
   grid-area: three;
-  background-color: #9F435C;
+  background-color: #F2D054;
+  transition: all .25s ease-in-out;
 }
 
 .four {
   grid-area: four;
-  background-color: #1D2236;
+  background-color: #B5A04A;
+  transition: all .25s ease-in-out;
 }
 
 .five {
   grid-area: five;
-  background-color: #74192A;
+  background-color: #DBC074;
+  transition: all .25s ease-in-out;
 }
 
 .six {
   grid-area: six;
-  background-color: #2E4032;
-}
-.seven {
-  grid-area: seven;
-  background-color: #9F435C;
-}
-.eight {
-  grid-area: eight;
-  background-color: #1D2236;
-}
-.nine {
-  grid-area: nine;
-  background-color: #9F435C;
+  background-color: #8BC560;
+  transition: all .25s ease-in-out;
 }
 
-@media only screen and (min-width: 860px) {
+.seven {
+  grid-area: seven;
+  background-color: #E66488;
+  transition: all .25s ease-in-out;
+}
+
+.eight {
+  grid-area: eight;
+  background-color: #6F91E9;
+  transition: all .25s ease-in-out;
+}
+
+.nine {
+  grid-area: nine;
+  background-color: #94489B;
+  transition: all .25s ease-in-out;
+}
+
+.hover:hover {
+  filter: brightness(115%);
+  z-index: 5;
+  transform: translateY(2px);
+  box-shadow: 0 3px #777;
+}
+
+.three:hover +.four +.five +.six +.seven +.eight +.nine +.carousel +.infobox{ 
+  background: url(images/giphy-1.gif) no-repeat;
+  background-size: cover;
+  min-width: 100%;
+}
+
+.four:hover +.five +.six +.seven +.eight +.nine +.carousel +.infobox{ 
+  background: url(https://media.giphy.com/media/10LKovKon8DENq/giphy.gif) no-repeat;
+  background-size: cover;
+  min-width: 100%;
+}
+
+.five:hover +.six +.seven +.eight +.nine +.carousel +.infobox{ 
+  background: url(images/giphy-2.gif) no-repeat;
+  background-size: cover;
+  min-width: 100%;
+}
+
+.six:hover +.seven +.eight +.nine +.carousel +.infobox{ 
+  background: url(images/giphy-3.gif) no-repeat;
+  background-size: cover;
+  min-width: 100%;
+}
+.seven:hover +.eight +.nine +.carousel +.infobox{ 
+  background: url(images/tumblr_o3ox7tL26c1ub79oyo1_500.gif) no-repeat;
+  background-size: cover;
+  min-width: 100%;
+}
+
+.eight:hover +.nine +.carousel +.infobox{ 
+  background: url(images/giphy-4.gif) no-repeat;
+  background-size: cover;
+  min-width: 100%;
+}
+
+.nine:hover +.carousel +.infobox{ 
+  background: url(images/36e5cb3064842dc9571900b66222e219e0579896_hq.gif) no-repeat;
+  background-size: cover;
+  min-width: 100%;
+}
+
+@media only screen and (min-width: 550px) {
   .wrapper {
-    display: grid;
-    font-family: helvetica, sans-serif;
-    font-size: 1.2em;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas:
+      'infobox  infobox    three'
+      'carousel carousel carousel'
+      'four      five         six'
+      'seven    eight       nine';
+  }
+  .icon {
+    padding-bottom: 90%;
+  }
+
+  aside {
+    display: block;
+
+  }
+
+  aside svg {
+    width: 100px;
+    height: 100px;
+  }
+
+  div .content {
+    justify-content: center;
+    margin-left: 0;
+  }
+
+ 
+}
+
+@media only screen and (min-width: 1000px) {
+  .wrapper {
+    height: 100vh;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: auto;
-    grid-gap: 0;
-    height: auto;
     grid-template-areas:
       'infobox infobox three carousel carousel'
       'four    five    six   carousel carousel'
       'seven   eight   nine  carousel carousel';
   }
-}
-
-@media only screen and (min-width: 1000px) {
-  .wrapper {
-    display: grid;
-    border: 1px solid blue;
-    font-family: helvetica, sans-serif;
-    font-size: 1.2em;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: auto;
-    grid-gap: 0;
-    height: auto;
-    grid-template-areas:
-      'infobox infobox three carousel carousel'
-      'four    five    six   carousel carousel'
-      'seven   eight   nine  carousel carousel';
+  .carousel .content {
+    background: url(/images/ash.png) no-repeat;
+    background-size: 100%;
+    background-color: #88C1EE;
   }
 }
