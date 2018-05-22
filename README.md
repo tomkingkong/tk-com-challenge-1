@@ -3,7 +3,8 @@
 
 ![alt text](https://raw.githubusercontent.com/tomkingkong/tk-comp-challenge-1/master/images/SS-4.png)
 
-## I chose Pokemon as my them, here are a few screenshots in various states
+## Pokemon theme
+### Here are a few screenshots in various states
 ### Screenshot 1 Full Screen
 ![alt text](https://raw.githubusercontent.com/tomkingkong/tk-comp-challenge-1/master/images/SS-1.png)
 
