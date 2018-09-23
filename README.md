@@ -1,17 +1,18 @@
 # Static Comp Challenge One
+
+<strong>Links to other static comps:</strong> [Static Comp 2](https://github.com/tomkingkong/tk-comp-challenge-2/), [Static Comp 3](https://github.com/tomkingkong/tk-comp-challenge-3/)
+
 ## Recreate this composition below, with your own theme
 
-![alt text](https://raw.githubusercontent.com/tomkingkong/tk-comp-challenge-1/master/images/SS-4.png)
+![original comp](https://raw.githubusercontent.com/tomkingkong/tk-comp-challenge-1/master/images/SS-4.png)
 
 ## Pokemon theme
-### https://tomkingkong.github.io/
-### Here are a few screenshots in various states
-### Screenshot 1 Full Screen
-![alt text](https://raw.githubusercontent.com/tomkingkong/tk-comp-challenge-1/master/images/SS-1.png)
+### [Demo](https://tomkingkong.github.io/)
+### Here are a few various states
 
-### Screenshot 2 Half Screen
-![alt text](https://raw.githubusercontent.com/tomkingkong/tk-comp-challenge-1/master/images/SS-2.png)
+### Desktop
+![Desktop](https://raw.githubusercontent.com/tomkingkong/tk-comp-challenge-1/master/images/gifs/static-one-desktop.gif)
 
-### Screenshot 3 Mobile Screen
-![alt text](https://raw.githubusercontent.com/tomkingkong/tk-comp-challenge-1/master/images/SS-3.png)
+### Responsive
+![Responsive](https://raw.githubusercontent.com/tomkingkong/tk-comp-challenge-1/master/images/gifs/static-one-responsive.gif)
 
