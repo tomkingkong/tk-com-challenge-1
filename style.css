@@ -379,7 +379,7 @@ nav div a {
       'seven   eight   nine  carousel carousel';
   }
   .carousel .content {
-    background: url(/images/ash.png) no-repeat;
+    background: url(images/ash.png) no-repeat;
     background-size: 100%;
     background-color: #88C1EE;
   }
